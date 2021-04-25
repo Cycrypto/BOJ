@@ -1,1 +1,8 @@
-﻿  Others.vcxproj -> C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Debug\Others.exe
+﻿  2003.cpp
+C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Others\2003.cpp(12,55): warning C4244: 'argument': conversion from '__int64' to 'size_t', possible loss of data
+C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Others\2003.cpp(23,22): warning C4244: '-=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Others\2003.cpp(30,21): warning C4244: '+=': conversion from '__int64' to 'int', possible loss of data
+C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Others\2003.cpp(33,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type '__int64'
+C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Others\2003.cpp(33,9): message : consider using '%lld' in the format string
+C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Others\2003.cpp(33,9): message : consider using '%I64d' in the format string
+  Others.vcxproj -> C:\Users\jh01l\Desktop\Programming\알고리즘 정리\기타\Others\Debug\Others.exe
