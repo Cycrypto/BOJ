@@ -27,5 +27,11 @@
     <ClCompile Include="2161.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="17609%28시간초과%29.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="17609.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
