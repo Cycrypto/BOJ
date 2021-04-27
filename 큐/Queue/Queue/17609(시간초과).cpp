@@ -29,7 +29,7 @@ int main(void) {
 		while (!deq.empty()) {
 			if (deq.front() == deq.back()) {
 				deq.pop_front(); deq.pop_back();	// 덱의 앞 뒤가 같다면 pop함
-			}
+			} 
 			else {
 				if (*(&deq.front() + 1) == deq.back()) {
 					deq.pop_front();	// front를 삭제시켰을 때 회문이라면
