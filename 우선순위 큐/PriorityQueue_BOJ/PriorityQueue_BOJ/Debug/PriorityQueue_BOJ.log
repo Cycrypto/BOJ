@@ -1,0 +1,8 @@
+﻿  1927.c
+C:\Users\jh01l\Desktop\KPU\2학년\자료구조\PriorityQueue\PriorityQueue_BOJ\PriorityQueue_BOJ\1927.c(73,10): warning C4133: 'return': incompatible types - from 'element *' to 'int *'
+C:\Users\jh01l\Desktop\KPU\2학년\자료구조\PriorityQueue\PriorityQueue_BOJ\PriorityQueue_BOJ\1927.c(82,9): warning C4477: 'scanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'element *'
+C:\Users\jh01l\Desktop\KPU\2학년\자료구조\PriorityQueue\PriorityQueue_BOJ\PriorityQueue_BOJ\1927.c(88,10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type '__int64'
+C:\Users\jh01l\Desktop\KPU\2학년\자료구조\PriorityQueue\PriorityQueue_BOJ\PriorityQueue_BOJ\1927.c(88,10): message : consider using '%lld' in the format string
+C:\Users\jh01l\Desktop\KPU\2학년\자료구조\PriorityQueue\PriorityQueue_BOJ\PriorityQueue_BOJ\1927.c(88,10): message : consider using '%I64d' in the format string
+C:\Users\jh01l\Desktop\KPU\2학년\자료구조\PriorityQueue\PriorityQueue_BOJ\PriorityQueue_BOJ\1927.c(86,1): warning C4133: 'initializing': incompatible types - from 'int *' to 'element *'
+  PriorityQueue_BOJ.vcxproj -> C:\Users\jh01l\Desktop\KPU\2학년\자료구조\PriorityQueue\PriorityQueue_BOJ\Debug\PriorityQueue_BOJ.exe
