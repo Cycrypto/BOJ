@@ -1,40 +1,66 @@
-#define _CRT_SECURE_NO_WARNINGS
-#define MAX 100000
-#define PARENT(x) x/2
-
 #include <stdio.h>
-#include <stdlib.h>
+#define MAX_N 100001
 
-typedef struct{
-	long long int data;
-}element;
+int heap[MAX_N];
+int size = 0;
 
-typedef struct {
-	int size;
-	element heap[MAX];
-}Heap;
-
-Heap* create(void) {
-	return (Heap*)malloc(sizeof(Heap));
+void swap(int* a, int* b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-void init(Heap* h) {
-	h->size = 0;
-}
+void insert(int data) {
+	int idx = ++size;
 
-void insert(Heap* h, element e) {
-	int i = ++(h->size);	//힙의 크기를 하나 늘림
-	while (i != 1 && e.data < h->heap[i].data) {
-		h->heap[i] = h->heap[PARENT(i)];
-		i = PARENT(i);
+	while ((idx != 1) && (data > heap[idx / 2])) {
+		heap[idx] = heap[idx / 2];
+		idx /= 2;
 	}
-	h->heap[i] = e;
+	heap[idx] = data;
 }
 
-element* pop(Heap* h) {
+int deleteheap() {
+	if (size == 0)
+		return 0;
+	int value = heap[1];
+	//1에  힙에 제일 마지막에 있는 데이터 삽입 
+	heap[1] = heap[size--];
+	int parent = 1;
+	int child;
+
+	while (1) {
+		child = parent * 2;
+		//왼쪽 오른쪽 선택하는거 
+		if (child + 1 <= size && heap[child] < heap[child + 1])
+			child++;
+
+		if (child > size || heap[child] < heap[parent])
+			break;
+
+		swap(&heap[parent], &heap[child]);
+		parent = child;
+	}
+
+	return value;
 
 }
+int main() {
+	int n;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++)
+	{
+		int x;
+		scanf("%d", &x);
+		if (x == 0)
+		{
+			printf("%d\n", deleteheap());
+		}
+		else
+		{
+			insert(x);
+		}
+	}
 
-int main(void) {
 
 }
