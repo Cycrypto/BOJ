@@ -1,3 +1,2 @@
-﻿  11279.c
-C:\Users\jh01l\Desktop\Programming\알고리즘 정리\우선순위 큐\PriorityQueue_BOJ\PriorityQueue_BOJ\11279.c(67,9): warning C4477: 'scanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'element *'
-  PriorityQueue_BOJ.vcxproj -> C:\Users\jh01l\Desktop\Programming\알고리즘 정리\우선순위 큐\PriorityQueue_BOJ\Debug\PriorityQueue_BOJ.exe
+﻿  11286.c
+  PriorityQueue_BOJ.vcxproj -> C:\Users\jh01l\Desktop\알고리즘 정리\우선순위 큐\PriorityQueue_BOJ\Debug\PriorityQueue_BOJ.exe
