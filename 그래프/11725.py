@@ -25,4 +25,4 @@ def dfs(graph_list, start, parent):
     return parent
 
 for i in list(dfs(node_graph, 1, parent))[2:]:
-    print(i[0])s
+    print(i[0])
