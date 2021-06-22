@@ -21,7 +21,7 @@
     <ClCompile Include="1260_ans.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="2178.c">
+    <ClCompile Include="2178.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
