@@ -1,3 +1,4 @@
-﻿  18352.cpp
-C:\Users\jh01l\Desktop\알고리즘 정리\그래프\Graph_boj\Graph_boj\18352.cpp(22,21): warning C4018: '<': signed/unsigned mismatch
+﻿  10282.cpp
+C:\Users\jh01l\Desktop\알고리즘 정리\그래프\Graph_boj\Graph_boj\10282.cpp(24,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jh01l\Desktop\알고리즘 정리\그래프\Graph_boj\Graph_boj\10282.cpp(51,21): warning C4018: '<': signed/unsigned mismatch
   Graph_boj.vcxproj -> C:\Users\jh01l\Desktop\알고리즘 정리\그래프\Graph_boj\Debug\Graph_boj.exe
