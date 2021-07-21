@@ -42,5 +42,11 @@
     <ClCompile Include="10282.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DFS_basic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2667.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
