@@ -1,0 +1,1 @@
+exec("r,_,*s=input();print(''.join(i*int(r)for i in s));"*int(input()))
