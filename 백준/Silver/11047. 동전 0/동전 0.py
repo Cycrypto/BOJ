@@ -6,10 +6,11 @@ lst.sort(reverse=True)
 
 i = 0
 cnt = 0
-while k:
-    if k - lst[i] >= 0:
-        k -=lst[i]
-        cnt += 1
-    else:
-        i += 1
+for op in lst:
+    if k == 0:
+        break
+    if k >= op:
+        m = k // op
+        k -= (m*op)
+        cnt += m
 print(cnt)
