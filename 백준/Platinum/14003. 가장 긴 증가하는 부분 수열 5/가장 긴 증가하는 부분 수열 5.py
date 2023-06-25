@@ -20,5 +20,5 @@ max_idx,ans = max(dp)+1,[]
 for i in range(n,0,-1):
     if dp[i] == max_idx-1:
         ans.append(nums[i])
-        max_idx = dp[i]
+        max_idx -= 1
 print(*ans[::-1])
