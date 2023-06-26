@@ -1,24 +1,21 @@
-import bisect as bs
-
+from bisect import bisect_left
 n = int(input())
-nums = [0] + list(map(int,input().split()))
-dp = [0]*(n+1)
-# 문제의 조건에 음수가 포함되므로 최저를 0이 아닌 -무한대로 설정해준다.
-cp = [-float('inf')]
+s = list(map(int, input().split()))
+c = [-float('INF')]
+dp = [0] * (n)
 
-for i in range(1, n+1):
-    if nums[i] > cp[-1]:
-        cp.append(nums[i])
-        dp[i] = len(cp)-1
+for i in range(n):
+    if c[-1] < s[i]:
+        c.append(s[i])
+        dp[i] = len(c) - 1
     else:
-        dp[i] = bs.bisect_left(cp,nums[i])
-        cp[dp[i]] = nums[i]
-print(len(cp)-1)
-            
-# 역추적
-max_idx,ans = max(dp)+1,[]
-for i in range(n,0,-1):
-    if dp[i] == max_idx-1:
-        ans.append(nums[i])
-        max_idx -= 1
-print(*ans[::-1])
+        c[k:=bisect_left(c, s[i])] = s[i]
+        dp[i] = k
+
+size, res = len(c) -1, []
+for i in range(n-1, -1, -1):
+    if dp[i] == size:
+        res.append(s[i])
+        size -= 1
+print(len(c) - 1)
+print(*res[::-1])
