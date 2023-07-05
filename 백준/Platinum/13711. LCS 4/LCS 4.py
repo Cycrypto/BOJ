@@ -6,10 +6,17 @@ n = int(input())
 A = list(map(int, input().split()))
 B = list(map(int, input().split()))
 
-C = [-1]*n
-for idx, a in enumerate(A):
-    C[idx] = B.index(A[idx])
+da = dict().fromkeys([i for i in range(n + 1)], -1)
+db = dict().fromkeys([i for i in range(n + 1)], -1)
 
+for i in range(n):
+    da[A[i]] = i
+    db[B[i]] = i
+
+C = []
+for i in range(n):
+    C.append(db[A[i]])
+    
 lis = [-float("INF")]
 for c in C:
     if c > lis[-1]:
