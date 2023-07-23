@@ -1,31 +1,27 @@
 import sys
-read = sys.stdin.readline
-sys.setrecursionlimit(1000000)
- 
-def solve(K):
-    if K == 0:
+sys.setrecursionlimit(int(1e8))
+input = sys.stdin.readline
+MAX = 9876543210
+n, m = map(int, input().split())
+coin = [int(input()) for _ in range(n)]
+dp = [0 for _ in range(m + 1)]
+
+def find(N):
+    if N == 0:
         return 0
-    if memo[K] > 0:
-        return memo[K]
- 
-    minVal = 999999
-    for i in range(N):
-        if K-coin[i] < 0:
+    
+    if dp[N] != 0:
+        return dp[N]
+    comp = MAX
+
+    for c in coin:
+        if N-c < 0: 
             continue
-        temp = solve(K-coin[i])+1
-        if minVal > temp:
-            minVal = temp
-    memo[K] = minVal
-    return minVal
- 
-N, K = map(int, read().split())
-coin = []
-memo = [0 for _ in range(K+1)]
-for _ in range(N):
-    coin.append(int(read()))
- 
-ans = solve(K)
-if ans == 999999:
-    print(-1)
-else:
-    print(ans)
+
+        s = find(N-c) + 1
+        comp = comp if comp < s else s
+    dp[N] = comp
+    return dp[N]
+
+result = find(m)
+print(result if result != MAX else -1)
