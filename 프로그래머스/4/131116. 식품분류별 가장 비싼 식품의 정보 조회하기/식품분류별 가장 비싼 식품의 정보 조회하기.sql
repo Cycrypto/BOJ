@@ -1,0 +1,28 @@
+-- 코드를 입력하세요
+WITH MAX_PRICE AS(
+    SELECT
+        CATEGORY,
+        MAX(PRICE) MAX_PRICE
+    FROM
+        FOOD_PRODUCT
+    WHERE
+        CATEGORY IN ('과자', '국', '김치', '식용유')
+    GROUP BY CATEGORY
+)
+
+SELECT 
+    A.CATEGORY, 
+    B.MAX_PRICE, 
+    A.PRODUCT_NAME
+FROM
+    FOOD_PRODUCT A,
+    MAX_PRICE B
+WHERE
+    A.CATEGORY = B.CATEGORY AND
+    A.PRICE = B.MAX_PRICE
+ORDER BY A.PRICE DESC
+
+
+# CATEGORY가 같더라도 PRODUCT_NAME이 다른 케이스가 존재
+# 하기 때문에 CATEGORY만 가지고 GROUP BY로 MAX(PRICE)를 SELECT 하려고 하면 오류가 발생합니다.
+
