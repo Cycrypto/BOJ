@@ -1,0 +1,5 @@
+import sys
+
+r1, r2, r3 = map(float, sys.stdin.readline().split())
+r = (r1 * r2 * r3) / (r1 * r2 + r2 * r3 + r3 * r1)
+print(f"{r:.10f}")
