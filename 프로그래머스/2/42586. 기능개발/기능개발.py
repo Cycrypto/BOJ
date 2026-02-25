@@ -1,12 +1,16 @@
+import math
 def solution(progresses, speeds):
-    days = [(100 - p + speeds[i] - 1) // speeds[i] for i, p in enumerate(progresses)]
-    l, r = 0, 0
-    result = 0
-    res =  []
-    while r < len(days) - 1:
-        if days[r + 1] > max(days[l:r+1]):
-            res.append(r - l + 1)
-            l = r + 1
-        r += 1
-    res.append(r - l + 1)
-    return res
+    daily = [math.ceil((100 - p)/speeds[i]) for i, p in enumerate(progresses)]
+    result = []
+    curr = daily[0]
+    cnt = 0
+    
+    for right in daily:
+        if right > curr:
+            curr = right
+            result.append(cnt)
+            cnt = 1
+        else:
+            cnt += 1
+    result.append(cnt)
+    return result
