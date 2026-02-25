@@ -1,16 +1,14 @@
-from collections import deque
 def solution(s):
-    s = deque(list(s))
-    q = deque([])
-    while s:
-        cur = s.popleft()
-        if cur == '(':
-            q.append(cur)
-            
+    st=[]
+    if s[0] == ')':
+        return False
+    
+    for i in s:
+        if i == '(':
+            st.append(i)
         else:
-            if len(q) and q[-1] == '(':
-                q.pop()
+            if st:
+                st.pop()
             else:
-                q.append(cur)
-                
-    return not(len(q))
+                return False
+    return True if not st else False
