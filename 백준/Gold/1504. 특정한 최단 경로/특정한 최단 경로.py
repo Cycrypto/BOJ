@@ -14,14 +14,15 @@ for i in range(m):
 p1, p2 = list(map(int, input().split()))
 
 
-def dijkstra(start, visit):
-    q = []
-    distance = [INF] * (n+1)
-    heapq.heappush(q, (0, start))
+def dijkstra(start):
+    hq = []
+    distance = [INF] * (n + 1)
     distance[start] = 0
+    heapq.heappush(hq, (0, start))
 
-    while q:
-        dist, now = heapq.heappop(q)
+    while hq:
+        dist, now = heapq.heappop(hq)
+
         if distance[now] < dist:
             continue
 
@@ -29,11 +30,15 @@ def dijkstra(start, visit):
             cost = dist + co
             if cost < distance[to]:
                 distance[to] = cost
-                heapq.heappush(q, (cost, to))
+                heapq.heappush(hq, (cost, to))
+    return distance
 
-    return distance[visit]
 
-w1 = dijkstra(1, p1) + dijkstra(p1, p2) + dijkstra(p2, n)
-w2 = dijkstra(1, p2) + dijkstra(p1, p2) + dijkstra(p1, n)
+d1 = dijkstra(1)
+dp1 = dijkstra(p1)
+dp2 = dijkstra(p2)
 
-print(min(w1,w2) if w1 != INF and w2 != INF else -1)
+case1 = d1[p1] + dp1[p2] + dp2[n]
+case2 = d1[p2] + dp2[p1] + dp1[n]
+ans = min(case1, case2)
+print(ans if ans < INF else -1)
