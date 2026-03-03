@@ -1,11 +1,17 @@
-string = list(input())
-bomb_str = input()
-end = bomb_str[-1]
-stack = []
+import sys
+input = sys.stdin.readline
 
-for c in string:
-    stack.append(c)
-    if c == end and ''.join(stack[-len(bomb_str):]) == bomb_str:
-        del stack[-len(bomb_str):]
+s = input().strip()
+bomb = input().strip()
+bl = len(bomb)
 
-print(''.join(stack) if len(stack) else "FRULA")
+st = []
+last = bomb[-1]
+
+for ch in s:
+    st.append(ch)
+    if ch == last and len(st) >= bl:
+        if ''.join(st[-bl:]) == bomb:
+            del st[-bl:]
+
+print(''.join(st) if st else "FRULA")
